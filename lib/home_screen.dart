@@ -1,0 +1,198 @@
+import 'package:education_app_ui/Utils/colors.dart';
+import 'package:flutter/material.dart';
+
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.only(top: 45),
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Image.asset(
+                    "Images/menu1.png",
+                    width: 40,
+                    height: 40,
+                  ),
+                  Image.asset(
+                    "Images/search1.png",
+                    height: 40,
+                    width: 40,
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15),
+              child: Row(
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          const Text(
+                            "Hi Julia",
+                            style: TextStyle(
+                                fontSize: 30, fontWeight: FontWeight.bold),
+                          ),
+                          const SizedBox(
+                            height: 15,
+                          ),
+                          Image.asset(
+                            "Images/hand.png",
+                            height: 30,
+                            width: 30,
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 5,
+                      ),
+                      const Text(
+                        "Today is a good day\nto learn something new!",
+                        style: TextStyle(color: Colors.black54, fontSize: 17),
+                      ),
+                    ],
+                  ),
+                  const Spacer(),
+                  Image.asset(
+                    "Images/profile.png",
+                    height: 110,
+                    width: 110,
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Card(
+                    color: primaryColor,
+                    child: const SizedBox(
+                      height: 50,
+                      width: 90,
+                      child: Center(
+                        child: Text(
+                          "Top",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  const Text(
+                    "Design",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
+                  ),
+                  const Text(
+                    "Marketing",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
+                  ),
+                  Image.asset(
+                    "Images/filter.png",
+                    height: 40,
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 15),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Categories",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                  ),
+                  Text(
+                    "See All",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.blue,
+                      fontSize: 16,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Container(
+              height: 595,
+              width: double.infinity,
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [Colors.white, Color.fromARGB(255, 233, 236, 246)],
+                ),
+              ),
+              child: Stack(
+                children: [
+                  Positioned(
+                    left: 0,
+                    child: displayImage(250, "Images/graphic design.png"),
+                  ),
+                  Positioned(
+                    right: 0,
+                    child: displayImage(220, "Images/programming.png"),
+                  ),
+                  Positioned(
+                    left: 0,
+                    top: 260,
+                    child: displayImage(220, "Images/financee.png"),
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
+    ));
+  }
+}
+
+Padding displayImage(double heigh, image) {
+  return Padding(
+    padding: const EdgeInsets.only(left: 15, right: 15),
+    child: Expanded(
+        child: SizedBox(
+      height: heigh,
+      width: 193,
+      child: Image.asset(
+        image,
+        fit: BoxFit.fill,
+      ),
+    )),
+  );
+}
